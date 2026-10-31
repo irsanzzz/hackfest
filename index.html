@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RuangBeasiswa UMSU</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-content">
+
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+
+                <div>
+                    <h2>Ruang<span>Beasiswa</span></h2>
+                    <small>Universitas Muhammadiyah Sumatera Utara</small>
+                </div>
+            </a>
+
+            <nav id="navMenu">
+                <a href="#beranda" class="active">Beranda</a>
+                <a href="#beasiswa">Cari Beasiswa</a>
+                <a href="#panduan">Panduan</a>
+                <a href="#tentang">Tentang</a>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="beranda">
+        <div class="container hero-content">
+
+            <div class="hero-text">
+                <span class="hero-label">
+                    <i class="fas fa-university"></i>
+                    Portal Beasiswa Mahasiswa UMSU
+                </span>
+
+                <h1>
+                    Temukan Peluang
+                    <span>Beasiswa</span>
+                    untuk Masa Depanmu.
+                </h1>
+
+                <p>
+                    Satu tempat untuk menemukan berbagai informasi beasiswa
+                    bagi mahasiswa aktif Universitas Muhammadiyah Sumatera Utara.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#beasiswa" class="btn-primary">
+                        Cari Beasiswa <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#panduan" class="btn-outline">
+                        Pelajari Panduan
+                    </a>
+                </div>
+
+                <div class="hero-info">
+                    <div>
+                        <i class="fas fa-check-circle"></i>
+                        Informasi terpusat
+                    </div>
+
+                    <div>
+                        <i class="fas fa-check-circle"></i>
+                        Khusus mahasiswa UMSU
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-circle"></div>
+
+                <div class="hero-card">
+                    <div class="hero-card-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+
+                    <h3>Raih Kesempatanmu!</h3>
+                    <p>Jangan lewatkan peluang beasiswa yang tersedia.</p>
+
+                    <div class="progress-bar">
+                        <div></div>
+                    </div>
+
+                    <small>Mulai perjalanan akademikmu</small>
+                </div>
+
+                <div class="floating-icon icon-one">
+                    <i class="fas fa-book-open"></i>
+                </div>
+
+                <div class="floating-icon icon-two">
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- SEARCH SECTION -->
+    <section class="search-section" id="beasiswa">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="section-label">TEMUKAN PELUANGMU</span>
+                <h2>Jelajahi Beasiswa</h2>
+                <p>Cari beasiswa sesuai kebutuhan dan bidang studimu.</p>
+            </div>
+
+            <div class="search-box">
+
+                <div class="search-input">
+                    <i class="fas fa-search"></i>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Cari nama atau informasi beasiswa..."
+                    >
+                </div>
+
+                <select id="facultyFilter">
+                    <option value="semua">Semua Fakultas</option>
+                    <option value="Ekonomi dan Bisnis">Ekonomi dan Bisnis</option>
+                    <option value="Hukum">Hukum</option>
+                    <option value="Ilmu Sosial dan Ilmu Politik">Ilmu Sosial dan Ilmu Politik</option>
+                    <option value="Pertanian">Pertanian</option>
+                    <option value="Teknik">Teknik</option>
+                    <option value="Agama Islam">Agama Islam</option>
+                    <option value="Keguruan dan Ilmu Pendidikan">Keguruan dan Ilmu Pendidikan</option>
+                    <option value="Kedokteran">Kedokteran</option>
+                    <option value="Ilmu Komputer dan Teknologi Informasi">Ilmu Komputer dan Teknologi Informasi</option>
+                </select>
+
+                <select id="categoryFilter">
+                    <option value="semua">Semua Kategori</option>
+                    <option value="akademik">Akademik</option>
+                    <option value="ekonomi">Ekonomi</option>
+                    <option value="prestasi">Prestasi</option>
+                    <option value="eksternal">Eksternal</option>
+                </select>
+
+                <button id="resetButton" class="reset-btn">
+                    <i class="fas fa-rotate-left"></i> Reset
+                </button>
+
+            </div>
+
+
+            <!-- SCHOLARSHIP LIST -->
+            <div class="result-heading">
+                <h3>Daftar Beasiswa</h3>
+                <span id="resultCount">0 Beasiswa ditemukan</span>
+            </div>
+
+            <div class="scholarship-grid" id="scholarshipList">
+                <!-- Data dari JavaScript -->
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- SAVED SCHOLARSHIPS -->
+    <section class="saved-section">
+        <div class="container">
+
+            <div class="saved-heading">
+                <div>
+                    <span class="section-label">KOLEKSI PRIBADI</span>
+                    <h2>Beasiswa Favorit</h2>
+                    <p>Beasiswa yang kamu simpan untuk dilihat kembali.</p>
+                </div>
+
+                <div class="saved-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+
+            <div class="scholarship-grid" id="favoriteList"></div>
+
+        </div>
+    </section>
+
+
+    <!-- GUIDE -->
+    <section class="guide-section" id="panduan">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="section-label">LANGKAH MUDAH</span>
+                <h2>Bagaimana Cara Memulai?</h2>
+                <p>Ikuti langkah sederhana untuk menemukan beasiswa.</p>
+            </div>
+
+            <div class="guide-grid">
+
+                <div class="guide-card">
+                    <div class="guide-number">01</div>
+                    <div class="guide-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Cari Beasiswa</h3>
+                    <p>Temukan beasiswa berdasarkan kategori dan fakultas.</p>
+                </div>
+
+                <div class="guide-card">
+                    <div class="guide-number">02</div>
+                    <div class="guide-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Pelajari Persyaratan</h3>
+                    <p>Baca informasi dan persyaratan setiap beasiswa.</p>
+                </div>
+
+                <div class="guide-card">
+                    <div class="guide-number">03</div>
+                    <div class="guide-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h3>Daftar Beasiswa</h3>
+                    <p>Ikuti tautan pendaftaran resmi dari penyelenggara.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta-section" id="tentang">
+        <div class="container cta-content">
+
+            <div>
+                <span>RUANGBEASISWA UMSU</span>
+                <h2>Wujudkan Masa Depan yang Lebih Cerah.</h2>
+                <p>
+                    Manfaatkan informasi beasiswa untuk mendukung perjalanan
+                    akademikmu sebagai mahasiswa UMSU.
+                </p>
+            </div>
+
+            <a href="#beasiswa" class="cta-button">
+                Temukan Beasiswa <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+
+            <div>
+                <h2>Ruang<span>Beasiswa</span></h2>
+                <p>Portal informasi beasiswa mahasiswa UMSU.</p>
+            </div>
+
+            <div class="footer-bottom">
+                © 2026 RuangBeasiswa UMSU. Proyek informasi beasiswa.
+            </div>
+
+        </div>
+        
+<!-- CHATBOT AI GEMMA -->
+<!-- TOMBOL CHAT GEMMA -->
+<button id="chatToggle" class="chat-toggle">
+    <i class="fas fa-comment-dots"></i>
+</button>
+
+<!-- KOTAK CHAT GEMMA -->
+<div class="chat-widget" id="chatWidget">
+
+    <div class="chat-header">
+        <div>
+            <h3>Asisten Gemma</h3>
+            <span><i class="fas fa-circle"></i> Online</span>
+        </div>
+
+        <button id="closeChat" class="close-chat">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- TEMPAT PERTANYAAN DAN JAWABAN -->
+    <div class="chat-messages" id="chatMessages">
+        <div class="message bot-message">
+            Halo! Saya Asisten Beasiswa UMSU. Ada yang bisa saya bantu?
+        </div>
+    </div>
+
+    <!-- INPUT PERTANYAAN -->
+    <form class="chat-input-area" id="chatForm">
+        <input
+            type="text"
+            id="chatInput"
+            placeholder="Tulis pertanyaan..."
+            required
+        >
+
+        <button type="submit" id="sendButton">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </form>
+
+</div>
+
+    </footer>
+
+
+    <!-- MODAL DETAIL -->
+    <div class="modal" id="detailModal">
+        <div class="modal-content">
+
+            <button class="close-modal" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div id="modalContent"></div>
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
